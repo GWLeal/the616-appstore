@@ -1,0 +1,20 @@
+{
+    "name": "Pydio Cells",
+    "available": true,
+    "port": 2049,
+    "exposable": true,
+    "dynamic_config": true,
+    "id": "pydio-cells",
+    "description": "Pydio Cells is an open-core, self-hosted Document Sharing, Collaboration and Management platform specifically designed for organizations that need advanced document sharing and collaboration without security trade-offs or compliance issues.",
+    "tipi_version": 4,
+    "version": "0.7.4",
+    "categories": ["utilities"],
+    "short_desc": "Open-core, self-hosted Document Sharing, Collaboration and Management platform",
+    "author": "Charles du Jeu",
+    "source": "https://github.com/pydio",
+    "website": "https://www.pydio.com",
+    "form_fields": [],
+    "supported_architectures": ["arm64", "amd64"],
+    "created_at": 1763402104205,
+    "updated_at": 1763402104205
+}
