@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+    "services": [
+        {
+            "name": "cells",
+            "image": "pydio/cells:latest",
+            "isMain": true,
+            "internalPort": 8080,
+            "environment": {
+                "CELLS_DB_DRIVER": "mysql",
+                "CELLS_DB_HOST": "mysql:3306",
+                "CELLS_DB_USER": "pydio",
+                "CELLS_DB_PASSWORD": "pydio-pass",
+                "CELLS_DB_NAME": "cells",
+                "CELLS_SITE_EXTERNAL": "https://${APP_DOMAIN}",
+                "CELLS_SITE_NO_TLS": "1"
+            },
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/cellsdir",
+                    "containerPath": "/var/cells"
+                }
+            ],
+            "dependsOn": ["mysql"]
+        },
+        {
+            "name": "mysql",
+            "image": "mysql:8",
+            "environment": {
+                "MYSQL_ROOT_PASSWORD": "pydio-pass",
+                "MYSQL_DATABASE": "cells",
+                "MYSQL_USER": "pydio",
+                "MYSQL_PASSWORD": "pydio-pass"
+            },
+            "command": [
+                "mysqld",
+                "--character-set-server=utf8mb4",
+                "--collation-server=utf8mb4_unicode_ci"
+            ],
+            "volumes": [
+                {
+                    "hostPath": "${APP_DATA_DIR}/data",
+                    "containerPath": "/var/lib/mysql"
+                }
+            ]
+        }
+    ]
+}
