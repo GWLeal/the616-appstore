@@ -1,7 +1,7 @@
 {
-  "name": "example-appstore",
+  "name": "the616-appstore",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom App Store for Runtipi",
   "main": "index.js",
   "type": "module",
   "scripts": {

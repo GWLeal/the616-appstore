@@ -3,14 +3,14 @@
     "services": [
         {
             "name": "front",
-            "image": "tombursch/kitchenowl-web:latest",
+            "image": "tombursch/kitchenowl-web:v0.7.4",
             "isMain": true,
             "internalPort": 80,
             "dependsOn": ["back"]
         },
         {
             "name": "back",
-            "image": "tombursch/kitchenowl-backend:latest",
+            "image": "tombursch/kitchenowl-backend:v0.7.4",
             "environment": {
                 "JWT_SECRET_KEY": "${JWT_SECRET_KEY}"
             },

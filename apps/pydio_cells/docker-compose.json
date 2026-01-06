@@ -3,7 +3,7 @@
     "services": [
         {
             "name": "cells",
-            "image": "pydio/cells:latest",
+            "image": "pydio/cells:4.4.16",
             "isMain": true,
             "internalPort": 8080,
             "environment": {
