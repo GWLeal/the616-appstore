@@ -1,20 +1,42 @@
 {
-    "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+    "schemaVersion": 2,
+    "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
     "services": [
         {
             "name": "cells",
             "image": "pydio/cells:4.4.16",
             "isMain": true,
             "internalPort": 8080,
-            "environment": {
-                "CELLS_DB_DRIVER": "mysql",
-                "CELLS_DB_HOST": "mysql:3306",
-                "CELLS_DB_USER": "pydio",
-                "CELLS_DB_PASSWORD": "pydio-pass",
-                "CELLS_DB_NAME": "cells",
-                "CELLS_SITE_EXTERNAL": "https://${APP_DOMAIN}",
-                "CELLS_SITE_NO_TLS": "1"
-            },
+            "environment": [
+                {
+                    "key": "CELLS_DB_DRIVER",
+                    "value": "mysql"
+                },
+                {
+                    "key": "CELLS_DB_HOST",
+                    "value": "mysql:3306"
+                },
+                {
+                    "key": "CELLS_DB_USER",
+                    "value": "pydio"
+                },
+                {
+                    "key": "CELLS_DB_PASSWORD",
+                    "value": "pydio-pass"
+                },
+                {
+                    "key": "CELLS_DB_NAME",
+                    "value": "cells"
+                },
+                {
+                    "key": "CELLS_SITE_EXTERNAL",
+                    "value": "https://${APP_DOMAIN}"
+                },
+                {
+                    "key": "CELLS_SITE_NO_TLS",
+                    "value": "1"
+                }
+            ],
             "volumes": [
                 {
                     "hostPath": "${APP_DATA_DIR}/cellsdir",
@@ -26,12 +48,24 @@
         {
             "name": "mysql",
             "image": "mysql:8",
-            "environment": {
-                "MYSQL_ROOT_PASSWORD": "pydio-pass",
-                "MYSQL_DATABASE": "cells",
-                "MYSQL_USER": "pydio",
-                "MYSQL_PASSWORD": "pydio-pass"
-            },
+            "environment": [
+                {
+                    "key": "MYSQL_ROOT_PASSWORD",
+                    "value": "pydio-pass"
+                },
+                {
+                    "key": "MYSQL_DATABASE",
+                    "value": "cells"
+                },
+                {
+                    "key": "MYSQL_USER",
+                    "value": "pydio"
+                },
+                {
+                    "key": "MYSQL_PASSWORD",
+                    "value": "pydio-pass"
+                }
+            ],
             "command": [
                 "mysqld",
                 "--character-set-server=utf8mb4",
