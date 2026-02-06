@@ -8,7 +8,7 @@
     "description": "KitchenOwl is a self-hosted grocery list and recipe manager.",
     "tipi_version": 7,
     "version": "0.7.6",
-    "categories": ["Utilities"],
+    "categories": ["utilities"],
     "short_desc": "A smart grocery list and recipe manager.",
     "author": "Tom Bursch",
     "source": "https://github.com/TomBursch/kitchenowl",
