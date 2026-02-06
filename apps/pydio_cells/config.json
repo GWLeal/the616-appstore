@@ -8,7 +8,7 @@
     "description": "Pydio Cells is an open-core, self-hosted Document Sharing, Collaboration and Management platform specifically designed for organizations that need advanced document sharing and collaboration without security trade-offs or compliance issues.",
     "tipi_version": 7,
     "version": "4.4.17",
-    "categories": ["Cloud"],
+    "categories": ["utilities", "data"],
     "short_desc": "Open-core, self-hosted Document Sharing, Collaboration and Management platform",
     "author": "Charles du Jeu",
     "source": "https://github.com/pydio",
